@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf Collection</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">Bookshelf Collection</h1>
+            <nav>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a class="header__link" href="#inicio">Inicio</a></li>
+                    <li class="header__nav-item"><a class="header__link" href="#categorias">Categorías</a></li>
+                    <li class="header__nav-item"><a class="header__link" href="#masvendidos">Más Vendidos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero__content">
+            <div class="hero__title">
+                <h2>Tu próxima aventura te espera</h2>
+                <p>Descubre una colección seleccionada de libros para todos los gustos.</p>
+            </div>
+            <a href="#categorias" class="hero__btn">Explorar Ahora</a>
+        </div>
+    </section>
+
+    <section id="categorias" class="categories">
+        <h2 class="categories__heading">Categorías</h2>
+        <div class="categories__grid">
+            <div class="categories__card categories__card--active">
+                <img class="categories__img" src="./src/self-improvement.png" alt="Icono desarrollo" />
+                <h3 class="categories__title">Desarrollo</h3>
+                <p class="categories__desc">Libros sobre crecimiento personal, programación y habilidades.</p>
+            </div>
+            <div class="categories__card">
+                <img class="categories__img" src="./src/finances.png" alt="Icono finanzas" />
+                <h3 class="categories__title">Finanzas</h3>
+                <p class="categories__desc">Economía, inversión y libertad financiera.</p>
+            </div>
+            <div class="categories__card">
+                <img class="categories__img" src="./src/science.png" alt="Icono ciencia" />
+                <h3 class="categories__title">Ciencia</h3>
+                <p class="categories__desc">Descubre el universo, la biología y mucho más.</p>
+            </div>
+            <div class="categories__card">
+                <img class="categories__img" src="./src/fairytale.png" alt="Icono novelas" />
+                <h3 class="categories__title">Novelas</h3>
+                <p class="categories__desc">Relatos que te atraparán desde la primera página.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="masvendidos" class="bestsellers">
+        <h2 class="bestsellers__heading">Más Vendidos</h2>
+        <div class="bestsellers__grid-wrapper">
+            <div class="bestsellers__grid">
+                <div class="book book--featured">
+                    <img class="book__img" src="./src/book-sertu.jpg" alt="Deja de ser tú: Joe Dispenza" />
+                    <div class="book__info">
+                        <h3 class="book__title">Deja de ser tú: La mente crea la realidad</h3>
+                        <p class="book__price">$370.00</p>
+                        <a href="./pages/detalle.html" class="book__btn">Comprar Ahora</a>
+                    </div>
+                </div>
+
+                <div class="book">
+                    <img class="book__img" src="./src/book-crees.jpg" alt="Si lo crees lo creas: Brian Tracy" />
+                    <div class="book__info">
+                        <h3 class="book__title">Si lo crees, lo creas</h3>
+                        <p class="book__price">$299.00</p>
+                        <a href="#" class="book__btn">Comprar Ahora</a>
+                    </div>
+                </div>
+
+                <div class="book">
+                    <img class="book__img" src="./src/book-habitos.jpg" alt="Hábitos atómicos: James Clear" />
+                    <div class="book__info">
+                        <h3 class="book__title">Hábitos atómicos</h3>
+                        <p class="book__price">$399.00</p>
+                        <a href="#" class="book__btn">Comprar Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Bookshelf Collection.</p>
+    </footer>
+</body>
+
+</html>

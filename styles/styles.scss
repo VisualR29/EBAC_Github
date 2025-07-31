@@ -1,0 +1,380 @@
+$color-primary: #22313F;
+$color-secondary: #FFCC00;
+$color-accent: #800020;
+$color-light: #FFF;
+$color-background: #F2F2E5;
+$color-text: #333;
+$color-muted: #555;
+$color-border: #D3D3D3;
+
+%card-base {
+  background: $color-light;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+%btn-base {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+%grid-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin button-base($bg, $color, $hover-bg, $hover-color) {
+  @extend %btn-base;
+  background: $bg;
+  color: $color;
+
+  &:hover {
+    background: $hover-bg;
+    color: $hover-color;
+  }
+}
+
+@mixin responsive-grid($min, $max) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min, $max));
+  gap: 3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: $color-text;
+  background-color: $color-background;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header {
+  background: $color-primary;
+  color: $color-light;
+  padding: 1rem 0;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+
+  &__nav-item {
+    margin: 0 1rem;
+  }
+
+  &__link {
+    color: $color-light;
+    text-decoration: none;
+  }
+}
+
+.hero {
+  background: url('../src/hero.jpg') no-repeat center center/cover;
+  color: $color-light;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(34, 49, 63, 0.5);
+    z-index: 1;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__btn {
+    @include button-base($color-secondary, $color-primary, $color-accent, $color-light);
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.categories {
+  padding: 2rem 0;
+  background: $color-background;
+  text-align: center;
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__card {
+    @extend %card-base;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    max-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    &--active {
+      border: 2px solid $color-primary;
+      background-color: #FFFBE6;
+    }
+  }
+
+  &__img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: $color-primary;
+  }
+
+  &__desc {
+    font-size: 0.9rem;
+    color: $color-muted;
+  }
+}
+
+.bestsellers {
+  padding: 2rem 0;
+  text-align: center;
+  background-color: $color-light;
+
+  &__grid-wrapper {
+    @extend %grid-wrapper;
+  }
+
+  &__grid {
+    @include responsive-grid(150px, 300px);
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 1000px;
+  }
+}
+
+.book {
+  @extend %card-base;
+  padding: 1rem;
+  border: 1px solid $color-border;
+  text-align: center;
+
+  &__img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: $color-primary;
+  }
+
+  &__price {
+    color: #444;
+  }
+
+  &__btn {
+    @include button-base($color-secondary, $color-primary, $color-accent, $color-light);
+    margin-top: auto;
+
+    &--outline {
+      @include button-base(transparent, $color-primary, $color-secondary, $color-light);
+      border: 2px solid $color-secondary;
+    }
+  }
+
+  &--featured {
+    border: 2px solid $color-secondary;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+  }
+}
+
+.footer {
+  background: $color-primary;
+  color: $color-light;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 70em) {
+  .hero {
+    height: 30vh;
+
+    &__title {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .bestsellers__grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+    gap: 2rem;
+    max-width: 670px;
+  }
+
+  .book__img {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 50em) {
+  .categories {
+    padding: 1rem 0;
+
+    &__card {
+      padding: 1rem;
+    }
+  }
+
+  .bestsellers {
+    padding: 1rem 0;
+
+    &__grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+      gap: 2rem;
+    }
+  }
+}
+
+
+//* detalle.html
+
+.detalle {
+  padding: 2rem 1rem;
+  background-color: $color-light;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    align-items: flex-start;
+  }
+
+  &__img-wrapper {
+    flex: 1 1 300px;
+    max-width: 400px;
+  }
+
+  &__img {
+    @extend %card-base;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  &__info {
+    flex: 2 1 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    color: $color-primary;
+  }
+
+  &__author {
+    font-weight: bold;
+    color: $color-muted;
+  }
+
+  &__price {
+    font-size: 1.4rem;
+    color: $color-accent;
+    font-weight: bold;
+  }
+
+  &__desc {
+    line-height: 1.6;
+    color: $color-muted;
+  }
+
+  &__meta {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.95rem;
+    color: $color-text;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__btn {
+    @include button-base($color-secondary, $color-primary, $color-accent, $color-light);
+    align-self: start;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .detalle {
+    &__container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__btn {
+      align-self: center;
+    }
+
+    &__title {
+      text-align: center;
+    }
+  }
+}
