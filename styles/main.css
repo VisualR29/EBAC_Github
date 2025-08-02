@@ -62,7 +62,6 @@ body {
   color: #FFF;
   text-align: center;
   padding: 1rem 0;
-  margin-top: 2rem;
 }
 
 .book {
@@ -167,8 +166,7 @@ body {
   gap: 1.5rem;
   margin-top: 2rem;
   max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 .categories__card {
   padding: 1.5rem;
@@ -205,6 +203,10 @@ body {
   text-align: center;
   background-color: #FFF;
 }
+.bestsellers__heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
 .bestsellers__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 300px));
@@ -212,6 +214,22 @@ body {
   margin-top: 1rem;
   width: 100%;
   max-width: 1000px;
+}
+@media screen and (max-width: 70em) {
+  .bestsellers__grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+    gap: 2rem;
+    max-width: 670px;
+  }
+}
+@media screen and (max-width: 50em) {
+  .bestsellers {
+    padding: 1rem 0;
+  }
+  .bestsellers__grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+    gap: 2rem;
+  }
 }
 
 @media screen and (max-width: 70em) {
@@ -222,10 +240,8 @@ body {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
   }
-  .bestsellers__grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
-    gap: 2rem;
-    max-width: 670px;
+  .book__img {
+    height: 250px;
   }
 }
 @media screen and (max-width: 50em) {
@@ -234,13 +250,6 @@ body {
   }
   .categories__card {
     padding: 1rem;
-  }
-  .bestsellers {
-    padding: 1rem 0;
-  }
-  .bestsellers__grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
-    gap: 2rem;
   }
 }
 .detalle {
