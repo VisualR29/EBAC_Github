@@ -1,0 +1,16 @@
+@mixin button-base($bg, $color, $hover-bg, $hover-color) {
+    @extend %btn-base;
+    background: $bg;
+    color: $color;
+
+    &:hover {
+        background: $hover-bg;
+        color: $hover-color;
+    }
+}
+
+@mixin responsive-grid($min, $max) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($min, $max));
+    gap: 3rem;
+}

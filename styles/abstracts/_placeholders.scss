@@ -1,0 +1,18 @@
+%card-base {
+    background: $color-light;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+%btn-base {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+%grid-wrapper {
+    display: flex;
+    justify-content: center;
+}
