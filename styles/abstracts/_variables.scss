@@ -6,3 +6,10 @@ $color-background: #F2F2E5;
 $color-text: #333;
 $color-muted: #555;
 $color-border: #D3D3D3;
+
+$breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
