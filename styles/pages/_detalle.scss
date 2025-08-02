@@ -1,0 +1,85 @@
+.detalle {
+    padding: 2rem 1rem;
+    background-color: $color-light;
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: auto;
+        align-items: flex-start;
+    }
+
+    &__img-wrapper {
+        flex: 1 1 300px;
+        max-width: 400px;
+    }
+
+    &__img {
+        @extend %card-base;
+        width: 100%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    &__info {
+        flex: 2 1 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__title {
+        font-size: 2rem;
+        color: $color-primary;
+    }
+
+    &__author {
+        font-weight: bold;
+        color: $color-muted;
+    }
+
+    &__price {
+        font-size: 1.4rem;
+        color: $color-accent;
+        font-weight: bold;
+    }
+
+    &__desc {
+        line-height: 1.6;
+        color: $color-muted;
+    }
+
+    &__meta {
+        list-style: none;
+        padding-left: 0;
+        font-size: 0.95rem;
+        color: $color-text;
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &__btn {
+        @include button-base($color-secondary, $color-primary, $color-accent, $color-light);
+        align-self: start;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .detalle {
+        &__container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__btn {
+            align-self: center;
+        }
+
+        &__title {
+            text-align: center;
+        }
+    }
+}
